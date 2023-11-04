@@ -1,7 +1,12 @@
+// About.js
 import React from "react";
 
 function About() {
-  return <h1>This is my about component!</h1>;
+  return (
+    <div>
+      <h2>About Page</h2>
+    </div>
+  );
 }
 
 export default About;

@@ -10,6 +10,19 @@ const linkStyles = {
   color: "white",
 };
 
+const activeLinkStyles = {
+  background: "darkblue",
+};
+
+const buttonStyles = {
+  padding: "10px 20px",
+  backgroundColor: "blue",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+};
+
 function Navbar({ setIsLoggedIn }) {
   const history = useHistory();
 
@@ -20,40 +33,15 @@ function Navbar({ setIsLoggedIn }) {
 
   return (
     <div>
-      <NavLink
-        to="/"
-        /* set exact so it knows to only set activeStyle when route is deeply equal to link */
-        exact
-        /* add styling to Navlink */
-        style={linkStyles}
-        /* add prop for activeStyle */
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
+      <NavLink to="/" exact style={linkStyles} activeStyle={activeLinkStyles}>
         Home
       </NavLink>
-      <NavLink
-        to="/about"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
+      <NavLink to="/about" style={linkStyles} activeStyle={activeLinkStyles}>
         About
       </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        Login
-      </NavLink>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout} style={buttonStyles}>
+        Logings
+      </button>
     </div>
   );
 }
